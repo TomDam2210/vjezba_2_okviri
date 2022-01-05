@@ -1,17 +1,34 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from 'react'
+import ReactDOM from 'react-dom'
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+const Hello = (props) => {
+  return(
+    <div>
+      <p>Hello {props.ime}</p>
+      <p>Ti imaš {props.godine} godine</p>
+    </div>
+  )
+}
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+const Pozdrav = () => {
+  return(
+    <div>
+      <p>Dobar dan</p>
+    </div>
+  )
+}
+
+const App = () => {
+  const anaGodine=23
+  return (
+  <div className='glavniDiv'>
+    <h1>Pozdravi</h1>
+    <Hello ime="Tomo" godine={22}/>
+    <Hello ime="Ana" godine={anaGodine}/>
+    <Hello ime="Dario" godine={4+8}/>
+    <Pozdrav />
+  </div>
+  )
+ }
+
+ ReactDOM.render(<App />, document.getElementById('root'));
